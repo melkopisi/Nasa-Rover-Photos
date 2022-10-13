@@ -31,12 +31,16 @@ android {
   kotlinOptions {
     jvmTarget = '1.8'
   }
+
+  buildFeatures {
+    viewBinding true
+  }
 }
 
 dependencies {
 
   // AndroidX
-  def ktxVersion = "1.9.0"
+  def ktxVersion = "1.8.0"
   implementation "androidx.core:core-ktx:$ktxVersion"
   def appcompatVersion = '1.5.0'
   implementation "androidx.appcompat:appcompat:$appcompatVersion"
