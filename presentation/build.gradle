@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+  implementation project(':data')
+  implementation project(':domain')
 
   // AndroidX
   def ktxVersion = "1.8.0"

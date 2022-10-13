@@ -2,6 +2,7 @@ plugins {
   id 'com.android.library'
   id 'org.jetbrains.kotlin.android'
   id 'kotlin-kapt'
+  id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -33,11 +34,16 @@ android {
 dependencies {
 
   // AndroidX
-  def ktxVersion = "1.9.0"
+  def ktxVersion = "1.8.0"
   implementation "androidx.core:core-ktx:$ktxVersion"
 
   //Coroutines
   def coroutinesVersion = '1.6.4'
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+  api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+  api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+  //dagger
+  def hiltVersion = '2.43.2'
+  implementation "com.google.dagger:hilt-android:$hiltVersion"
+  kapt "com.google.dagger:hilt-compiler:$hiltVersion"
 }
