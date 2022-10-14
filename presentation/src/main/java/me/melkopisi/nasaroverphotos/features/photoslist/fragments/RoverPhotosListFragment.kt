@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -19,7 +20,6 @@ import me.melkopisi.nasaroverphotos.features.photoslist.adapters.RoverPhotosAdap
 import me.melkopisi.nasaroverphotos.features.photoslist.viewmodels.RoverPhotosListViewModel
 import me.melkopisi.nasaroverphotos.features.photoslist.viewmodels.ScreenState
 import me.melkopisi.nasaroverphotos.general.extensions.collectLifecycleFlow
-import me.melkopisi.nasaroverphotos.general.extensions.makeSnackBar
 import me.melkopisi.nasaroverphotos.general.utils.EndlessRecyclerViewScrollListener
 
 /*
@@ -86,10 +86,14 @@ class RoverPhotosListFragment : Fragment() {
 
       when (state) {
         is ScreenState.Success -> {
+          binding.inclEmptyState.llEmptyList.isVisible = false
           photosAdapter.setData(state.photos)
         }
         is ScreenState.Fail -> {
-          binding.root.makeSnackBar(state.msg ?: getString(R.string.general_error))
+          binding.inclEmptyState.apply {
+            llEmptyList.isVisible = true
+            tvEmptyState.text = state.msg
+          }
         }
         else -> Unit
       }

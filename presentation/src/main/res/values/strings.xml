@@ -12,5 +12,4 @@
   <string name="rover_status">Status: %s</string>
   <string name="rover_launch_date">Launch Date: %s</string>
   <string name="rover_landing_date">Landing Date: %s</string>
-
 </resources>
