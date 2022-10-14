@@ -1,0 +1,110 @@
+plugins {
+  id 'com.android.application'
+  id 'org.jetbrains.kotlin.android'
+  id 'kotlin-kapt'
+  id 'dagger.hilt.android.plugin'
+  id 'kotlin-parcelize'
+}
+
+android {
+  compileSdk 32
+
+  defaultConfig {
+    applicationId "me.melkopisi.nasaroverphotos"
+    minSdk 23
+    targetSdk 32
+    versionCode 1
+    versionName "1.0"
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  kotlinOptions {
+    jvmTarget = '1.8'
+  }
+
+  buildFeatures {
+    viewBinding true
+  }
+}
+
+dependencies {
+  implementation project(':data')
+  implementation project(':domain')
+
+  // AndroidX
+  def ktxVersion = "1.8.0"
+  implementation "androidx.core:core-ktx:$ktxVersion"
+  def appcompatVersion = '1.5.0'
+  implementation "androidx.appcompat:appcompat:$appcompatVersion"
+  def materialVersion = '1.6.1'
+  implementation "com.google.android.material:material:$materialVersion"
+  def constraintVersion = '2.1.4'
+  implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
+  def swipeRefreshVersion = '1.1.0'
+  implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshVersion"
+
+  //lifecycle
+  def lifecycleVersion = "2.5.1"
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+  implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+  implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+
+  //Navigation
+  def navigationVersion = '2.5.1'
+  implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+  implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+  //dagger
+  def hiltVersion = '2.43.2'
+  implementation "com.google.dagger:hilt-android:$hiltVersion"
+  kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+
+  //room
+  def roomVersion = "2.4.3"
+  implementation "androidx.room:room-runtime:$roomVersion"
+  kapt "androidx.room:room-compiler:$roomVersion"
+  implementation "androidx.room:room-ktx:$roomVersion"
+  implementation "androidx.room:room-rxjava2:$roomVersion"
+
+  //glide
+  def glideVersion = "4.13.2"
+  implementation "com.github.bumptech.glide:glide:$glideVersion"
+  kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+  // Test
+  def junitVersion = '4.13.2'
+  testImplementation "junit:junit:$junitVersion"
+  def mockitoVersion = '3.10.0'
+  testImplementation "org.mockito:mockito-core:$mockitoVersion"
+  testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+  androidTestImplementation "org.mockito:mockito-android:$mockitoVersion"
+  def mockitoKotlinVersion = '4.0.0'
+  testImplementation "org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion"
+  def mockWebServerVersion = '4.9.3'
+  testImplementation "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
+  def archTestVersion = '2.1.0'
+  testImplementation "androidx.arch.core:core-testing:$archTestVersion"
+  def coroutinesTestVersion = "1.6.4"
+  testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
+  def junitAndroidxVersion = '1.1.3'
+  androidTestImplementation "androidx.test.ext:junit:$junitAndroidxVersion"
+  def espressoVersion = '3.4.0'
+  androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+  androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+
+  def turbineVersion = '0.7.0'
+  testImplementation "app.cash.turbine:turbine:$turbineVersion"
+  def truthVersion = '1.1.3'
+  testImplementation "com.google.truth:truth:$truthVersion"
+}

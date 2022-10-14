@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <!-- As you want to pass domain-specific traffic -->
+  <domain-config cleartextTrafficPermitted="true">
+    <!-- Add your specific domain you want to pass without https -->
+    <domain includeSubdomains="true">mars.jpl.nasa.gov</domain>
+  </domain-config>
+</network-security-config>

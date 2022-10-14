@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/roverPhotosListFragment">
+
+  <fragment
+      android:id="@+id/roverPhotosListFragment"
+      android:name="me.melkopisi.nasaroverphotos.features.photoslist.fragments.RoverPhotosListFragment"
+      tools:layout="@layout/fragment_rover_photos_list"
+      android:label="RoverPhotosListFragment">
+    <action
+        android:id="@+id/action_roverPhotosListFragment_to_roverPhotoDetailsFragment"
+        app:destination="@id/roverPhotoDetailsFragment" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/roverPhotoDetailsFragment"
+      android:name="me.melkopisi.nasaroverphotos.features.photosdetails.fragments.RoverPhotoDetailsFragment"
+      tools:layout="@layout/fragment_rover_photo_details"
+      android:label="RoverPhotoDetailsFragment">
+
+    <argument
+        android:name="rover_details"
+        app:argType="me.melkopisi.nasaroverphotos.features.photoslist.models.RoverPhotosUiModel" />
+  </fragment>
+</navigation>
