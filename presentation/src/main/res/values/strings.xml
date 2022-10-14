@@ -3,13 +3,12 @@
   <string name="general_error">Something went wrong.</string>
 
 <!--  rover details-->
+  <string name="name_title">Name</string>
   <string name="rover_photo_date_title">Photo Earth date:</string>
   <string name="rover_camera_info_title">Camera Info:</string>
-  <string name="rover_camera_short_name">Name: %s</string>
-  <string name="rover_camera_full_name">Full Name: %s</string>
+  <string name="full_name_title">Full Name</string>
   <string name="rover_info_title">Rover Info:</string>
-  <string name="rover_name">Name: %s</string>
-  <string name="rover_status">Status: %s</string>
-  <string name="rover_launch_date">Launch Date: %s</string>
-  <string name="rover_landing_date">Landing Date: %s</string>
+  <string name="status_title">Status</string>
+  <string name="rover_launch_date_title">Launch Date</string>
+  <string name="rover_landing_date_title">Landing Date</string>
 </resources>
