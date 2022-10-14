@@ -14,7 +14,6 @@ interface RoverApi {
     const val ROVER_PHOTOS = "mars-photos/api/v1/rovers/curiosity/photos"
   }
 
-  //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY&page=3
   @GET(ROVER_PHOTOS)
   suspend fun getRoverPhotos(
     @Query("api_key") apiKey: String = "DEMO_KEY",
