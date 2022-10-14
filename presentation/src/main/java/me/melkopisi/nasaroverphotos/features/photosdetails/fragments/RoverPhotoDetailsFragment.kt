@@ -1,6 +1,7 @@
 package me.melkopisi.nasaroverphotos.features.photosdetails.fragments
 
 import android.animation.ObjectAnimator
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -42,12 +43,16 @@ class RoverPhotoDetailsFragment : Fragment() {
   }
 
   private fun setupToolbar() {
-    (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
+    with(binding){
+    (requireActivity() as MainActivity).setSupportActionBar(toolbar)
     (requireActivity() as MainActivity).supportActionBar?.apply {
       setDisplayHomeAsUpEnabled(true)
     }
-    binding.toolbar.setNavigationOnClickListener { requireActivity().onBackPressed() }
-    binding.appbarLayout.addOnOffsetChangedListener(object : AppBarStateChangedListener() {
+    toolbar.apply {
+      setNavigationOnClickListener { requireActivity().onBackPressed() }
+      navigationIcon?.setTint(Color.WHITE)
+    }
+    appbarLayout.addOnOffsetChangedListener(object : AppBarStateChangedListener() {
       override fun onStateChanged(appBarLayout: AppBarLayout, state: State) {
         binding.roverDetailsToolbarContentLinear.apply {
           animate().scaleX(if (state == COLLAPSED) 1.0F else 0.97F)
@@ -57,14 +62,14 @@ class RoverPhotoDetailsFragment : Fragment() {
             .setDuration(if (state == COLLAPSED) 200L else 50L)
             .start()
         }
-        binding.roverDetailsContentCardView.apply {
+        roverDetailsContentCardView.apply {
           ObjectAnimator.ofFloat(this, "radius", (if (state == COLLAPSED) 0 else 30).toPixel(appBarLayout.context).toFloat())
             .setDuration(200L)
             .start()
         }
       }
     })
-  }
+  }}
 
   private fun setupViews(photoModel: RoverPhotosUiModel?) {
     with(photoModel!!) {

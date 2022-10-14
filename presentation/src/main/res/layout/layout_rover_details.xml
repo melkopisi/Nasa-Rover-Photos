@@ -124,7 +124,7 @@
       android:id="@+id/tv_rover_status_value"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginTop="10dp"
+      android:layout_marginTop="20dp"
       app:layout_constraintEnd_toEndOf="@id/center_guideline"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/tv_rover_name_value"
@@ -145,7 +145,7 @@
       android:gravity="start"
       android:textColor="@color/light_grey"
       android:textSize="16sp"
-      tools:text="@tools:sample/first_names"
+      tools:text="@tools:sample/date/ddmmyy"
       />
 
   <androidx.appcompat.widget.AppCompatTextView
@@ -158,7 +158,7 @@
       android:gravity="start"
       android:textColor="@color/light_grey"
       android:textSize="16sp"
-      tools:text="@tools:sample/first_names"
+      tools:text="@tools:sample/date/ddmmyy"
       />
 
   <androidx.constraintlayout.widget.Guideline
