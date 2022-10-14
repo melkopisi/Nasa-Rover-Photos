@@ -13,4 +13,12 @@
     <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     <!-- Customize your theme here. -->
   </style>
+
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+  <style name="CollapsingToolbarExpandedTextStyle" parent="Widget.AppCompat.TextView">
+    <item name="android:textSize">0.1sp</item>
+    <item name="android:textColor">@android:color/transparent</item>
+  </style>
 </resources>
