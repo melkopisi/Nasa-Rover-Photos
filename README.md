@@ -31,3 +31,5 @@ This architecture uses a layered software architecture.
 * [Gson](https://github.com/google/gson) A Java serialization/deserialization library to convert Java Objects into JSON and back.
 * [Material Design](https://material.io/design/guidelines-overview) are interactive building blocks for creating a friendly user interface.
 * [Glide](https://github.com/bumptech/glide) An image loading and caching library.
+* [JUnit](https://junit.org/junit5/) A foundation framework for developer-side testing on the JVM.
+* [Mockito](https://github.com/mockito/mockito) Mocking framework for unit tests.
