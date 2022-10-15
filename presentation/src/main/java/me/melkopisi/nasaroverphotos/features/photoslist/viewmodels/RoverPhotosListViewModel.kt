@@ -3,8 +3,8 @@ package me.melkopisi.nasaroverphotos.features.photoslist.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.MainCoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -25,7 +25,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RoverPhotosListViewModel @Inject constructor(
-  @MainDispatcher private val mainDispatcher: MainCoroutineDispatcher,
+  @MainDispatcher private val mainDispatcher: CoroutineDispatcher,
   private val getRoverPhotosUseCase: GetRoverPhotosUseCase
 ) : ViewModel() {
 
